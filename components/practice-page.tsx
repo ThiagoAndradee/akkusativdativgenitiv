@@ -100,7 +100,7 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
   const progressPercentage = ((answeredQuestions + 1) / totalQuestions) * 100
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden">
+    <div className="h-screen flex flex-col overflow-none">
       {/* Header */}
       <div className="bg-white p-4 flex items-center justify-between">
         <Progress value={progressPercentage} className="w-full h-2" />
