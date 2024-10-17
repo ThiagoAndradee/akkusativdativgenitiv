@@ -100,14 +100,14 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
   const progressPercentage = ((answeredQuestions + 1) / totalQuestions) * 100
 
   return (
-    <div className="min-h-screen bg-[#f0f3f8] flex flex-col">
+    <div className="h-screen flex flex-col overflow-hidden">
       {/* Header */}
       <div className="bg-white p-4 flex items-center justify-between">
         <Progress value={progressPercentage} className="w-full h-2" />
       </div>
 
       {/* Main content */}
-      <div className="flex-grow flex flex-col justify-center p-6">
+      <div className="flex-grow flex flex-col justify-center p-6 overflow-y-auto">
         <h2 className="text-2xl font-bold text-center mb-8">Füllen Sie die Lücke</h2>
         <p className="mb-6 text-xl font-medium text-center">
           {currentSentence.frase.split('___').map((part, index, array) => (
