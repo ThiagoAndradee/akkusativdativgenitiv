@@ -7,33 +7,34 @@ import { Progress } from "@/components/ui/progress"
 
 type Sentence = {
   frase: string
-  resposta_correta: string
+  respostas_certas: string[]
   nominativo: string
   caso: string
 }
 
 const allSentences: Sentence[] = [
-  { frase: "Der Geschmack ___ Essens ist gut.", resposta_correta: "des", nominativo: "das Essen", caso: "Genitiv" },
-  { frase: "Ich gebe ___ Frau das Buch.", resposta_correta: "der", nominativo: "die Frau", caso: "Dativ" },
-  { frase: "Er hat ___ Hund gesehen.", resposta_correta: "den", nominativo: "der Hund", caso: "Akkusativ" },
-  { frase: "Die Farbe ___ Autos ist rot.", resposta_correta: "des", nominativo: "das Auto", caso: "Genitiv" },
-  { frase: "Wir helfen ___ Kind mit den Hausaufgaben.", resposta_correta: "dem", nominativo: "das Kind", caso: "Dativ" },
-  { frase: "Sie trägt ___ Kleid.", resposta_correta: "das", nominativo: "das Kleid", caso: "Akkusativ" },
-  { frase: "Das Haus ___ Frau ist schön.", resposta_correta: "der", nominativo: "die Frau", caso: "Genitiv" },
-  { frase: "Er dankt ___ Mann für die Hilfe.", resposta_correta: "dem", nominativo: "der Mann", caso: "Dativ" },
-  { frase: "Ich kaufe ___ Tisch.", resposta_correta: "den", nominativo: "der Tisch", caso: "Akkusativ" },
-  { frase: "Die Tür ___ Hauses ist offen.", resposta_correta: "des", nominativo: "das Haus", caso: "Genitiv" },
-  { frase: "Wir folgen ___ Anweisungen.", resposta_correta: "den", nominativo: "die Anweisungen", caso: "Dativ" },
-  { frase: "Sie vertraut ___ Freund.", resposta_correta: "dem", nominativo: "der Freund", caso: "Dativ" },
-  { frase: "Das Buch ___ Lehrers ist interessant.", resposta_correta: "des", nominativo: "der Lehrer", caso: "Genitiv" },
-  { frase: "Er gibt ___ Katze Futter.", resposta_correta: "der", nominativo: "die Katze", caso: "Dativ" },
-  { frase: "Ich sehe ___ Vogel im Baum.", resposta_correta: "den", nominativo: "der Vogel", caso: "Akkusativ" },
-  { frase: "Die Qualität ___ Produkts ist hoch.", resposta_correta: "des", nominativo: "das Produkt", caso: "Genitiv" },
-  { frase: "Sie hilft ___ Nachbarn beim Umzug.", resposta_correta: "dem", nominativo: "der Nachbar", caso: "Dativ" },
-  { frase: "Wir besuchen ___ Museum heute.", resposta_correta: "das", nominativo: "das Museum", caso: "Akkusativ" },
-  { frase: "Der Preis ___ Tickets ist günstig.", resposta_correta: "des", nominativo: "das Ticket", caso: "Genitiv" },
-  { frase: "Er schenkt ___ Mutter Blumen.", resposta_correta: "der", nominativo: "die Mutter", caso: "Dativ" },
+  { frase: "Ich sehe ___ Mann im Park.", respostas_certas: ["den", "einen"], nominativo: "der Mann", caso: "Akkusativ" },
+  { frase: "Das Auto ___ Freundes ist rot.", respostas_certas: ["des"], nominativo: "der Freund", caso: "Genitiv" },
+  { frase: "Sie hilft ___ Kind mit den Hausaufgaben.", respostas_certas: ["dem", "einem"], nominativo: "das Kind", caso: "Dativ" },
+  { frase: "Die Tasche ___ Frau liegt auf dem Tisch.", respostas_certas: ["der"], nominativo: "die Frau", caso: "Genitiv" },
+  { frase: "Er gibt ___ Lehrer das Buch.", respostas_certas: ["dem", "einem"], nominativo: "der Lehrer", caso: "Dativ" },
+  { frase: "Ich nehme ___ Apfel aus der Schale.", respostas_certas: ["den", "einen"], nominativo: "der Apfel", caso: "Akkusativ" },
+  { frase: "Das Fahrrad ___ Kindes ist neu.", respostas_certas: ["des"], nominativo: "das Kind", caso: "Genitiv" },
+  { frase: "Ich spreche mit ___ Arzt über das Problem.", respostas_certas: ["dem", "einem"], nominativo: "der Arzt", caso: "Dativ" },
+  { frase: "Sie kauft ___ Blumen für den Garten.", respostas_certas: ["die"], nominativo: "die Blumen", caso: "Akkusativ" },
+  { frase: "Der Hut ___ Mannes ist schwarz.", respostas_certas: ["des"], nominativo: "der Mann", caso: "Genitiv" },
+  { frase: "Er stellt ___ Stuhl in die Ecke.", respostas_certas: ["den", "einen"], nominativo: "der Stuhl", caso: "Akkusativ" },
+  { frase: "Der Bruder ___ Frau ist Lehrer.", respostas_certas: ["der"], nominativo: "die Frau", caso: "Genitiv" },
+  { frase: "Sie zeigt ___ Kind das Buch.", respostas_certas: ["dem", "einem"], nominativo: "das Kind", caso: "Dativ" },
+  { frase: "Der Hund ___ Nachbarn bellt laut.", respostas_certas: ["des"], nominativo: "der Nachbar", caso: "Genitiv" },
+  { frase: "Ich bringe ___ Freundin ein Geschenk.", respostas_certas: ["der", "einer"], nominativo: "die Freundin", caso: "Dativ" },
+  { frase: "Er hat ___ Schlüssel verloren.", respostas_certas: ["den", "einen"], nominativo: "der Schlüssel", caso: "Akkusativ" },
+  { frase: "Das Handy ___ Mannes klingelt.", respostas_certas: ["des"], nominativo: "der Mann", caso: "Genitiv" },
+  { frase: "Sie erzählt ___ Lehrer die Geschichte.", respostas_certas: ["dem", "einem"], nominativo: "der Lehrer", caso: "Dativ" },
+  { frase: "Ich finde ___ Buch interessant.", respostas_certas: ["das", "ein"], nominativo: "das Buch", caso: "Akkusativ" },
+  { frase: "Das Auto ___ Nachbarn ist blau.", respostas_certas: ["des"], nominativo: "der Nachbar", caso: "Genitiv" }
 ]
+
 
 type PracticePageProps = {
   totalQuestions: number
@@ -60,10 +61,10 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
   const checkAnswer = () => {
     if (!currentSentence || hasAnswered) return
 
-    const isCorrect = userAnswer.toLowerCase() === currentSentence.resposta_correta.toLowerCase()
+    const isCorrect = currentSentence.respostas_certas.includes(userAnswer.toLowerCase())
     setFeedback({
       correct: isCorrect,
-      message: isCorrect ? "Richtig!" : `Falsch. Richtige Antwort: "${currentSentence.resposta_correta}"`
+      message: isCorrect ? "Richtig!" : `Falsch. Richtige Antwort(en): "${currentSentence.respostas_certas.join(', ')}"`
     })
     setShowExplanation(true)
     setHasAnswered(true)
