@@ -219,7 +219,7 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
   return (
     <div className="h-screen flex flex-col bg-[#f5f9ff] relative">
       {/* Header com progresso e vidas */}
-      <div className="bg-[#A7EBFE] p-6 pt-72 flex flex-col items-center justify-center rounded-b-4xl relative">
+      <div className="bg-[#A7EBFE] p-6 pt-56 flex flex-col items-center justify-center rounded-b-4xl relative">
         <Image src={mascotImage} alt="Mascote" width={140} height={140} className="absolute" />
       </div>
       <div className="flex flex-col items-center justify-center px-8 pt-16">
