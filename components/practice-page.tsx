@@ -17,10 +17,128 @@ type Sentence = {
 }
 
 const allSentences: Sentence[] = [
-  { frase: "Ich sehe ___ Mann im Park.", respostas_certas: ["den", "einen"], nominativo: "der Mann", caso: "Akkusativ" },
-  { frase: "Das Auto ___ Freundes ist rot.", respostas_certas: ["des"], nominativo: "der Freund", caso: "Genitiv" },
-  { frase: "Das djdkksd ___ dskldjksjadk ist dlksjklds.", respostas_certas: ["des"], nominativo: "der Freund", caso: "Genitiv" },
+  { 
+    "frase": "Ich kenne ___ Lehrer aus der Schule.", 
+    "respostas_certas": ["den", "einen"], 
+    "nominativo": "der Lehrer", 
+    "caso": "Akkusativ" 
+  },
+  { 
+    "frase": "Das Buch ___ Schülers ist interessant.", 
+    "respostas_certas": ["des"], 
+    "nominativo": "der Schüler", 
+    "caso": "Genitiv" 
+  },
+  { 
+    "frase": "___ Mädchen spielt draußen.", 
+    "respostas_certas": ["Das", "Ein"], 
+    "nominativo": "das Mädchen", 
+    "caso": "Nominativ" 
+  },
+  { 
+    "frase": "Ich gebe ___ Frau ein Geschenk.", 
+    "respostas_certas": ["der", "einer"], 
+    "nominativo": "die Frau", 
+    "caso": "Dativ" 
+  },
+  { 
+    "frase": "___ Auto steht auf dem Parkplatz.", 
+    "respostas_certas": ["Das", "Ein"], 
+    "nominativo": "das Auto", 
+    "caso": "Nominativ" 
+  },
+  { 
+    "frase": "Wir besuchen ___ Großeltern morgen.", 
+    "respostas_certas": ["die", "unsere"], 
+    "nominativo": "die Großeltern", 
+    "caso": "Akkusativ" 
+  },
+  { 
+    "frase": "Das Haus ___ Familie ist sehr alt.", 
+    "respostas_certas": ["der"], 
+    "nominativo": "die Familie", 
+    "caso": "Genitiv" 
+  },
+  { 
+    "frase": "Ich spreche mit ___ Lehrer über das Projekt.", 
+    "respostas_certas": ["dem", "einem"], 
+    "nominativo": "der Lehrer", 
+    "caso": "Dativ" 
+  },
+  { 
+    "frase": "___ Stuhl ist kaputt.", 
+    "respostas_certas": ["Der", "Ein"], 
+    "nominativo": "der Stuhl", 
+    "caso": "Nominativ" 
+  },
+  { 
+    "frase": "Ich habe ___ Hund gesehen.", 
+    "respostas_certas": ["den", "einen"], 
+    "nominativo": "der Hund", 
+    "caso": "Akkusativ" 
+  },
+  { 
+    "frase": "Die Farbe ___ Wagens ist schwarz.", 
+    "respostas_certas": ["des"], 
+    "nominativo": "der Wagen", 
+    "caso": "Genitiv" 
+  },
+  { 
+    "frase": "Er erzählt ___ Freund eine Geschichte.", 
+    "respostas_certas": ["dem", "einem"], 
+    "nominativo": "der Freund", 
+    "caso": "Dativ" 
+  },
+  { 
+    "frase": "___ Buch liegt auf dem Tisch.", 
+    "respostas_certas": ["Das", "Ein"], 
+    "nominativo": "das Buch", 
+    "caso": "Nominativ" 
+  },
+  { 
+    "frase": "Wir haben ___ Film gestern gesehen.", 
+    "respostas_certas": ["den", "einen"], 
+    "nominativo": "der Film", 
+    "caso": "Akkusativ" 
+  },
+  { 
+    "frase": "Das Handy ___ Freundes ist neu.", 
+    "respostas_certas": ["des"], 
+    "nominativo": "der Freund", 
+    "caso": "Genitiv" 
+  },
+  { 
+    "frase": "Ich schreibe ___ Lehrer eine E-Mail.", 
+    "respostas_certas": ["dem", "einem"], 
+    "nominativo": "der Lehrer", 
+    "caso": "Dativ" 
+  },
+  { 
+    "frase": "___ Kind spielt im Garten.", 
+    "respostas_certas": ["Das", "Ein"], 
+    "nominativo": "das Kind", 
+    "caso": "Nominativ" 
+  },
+  { 
+    "frase": "Ich kenne ___ Mann aus der Nachbarschaft.", 
+    "respostas_certas": ["den", "einen"], 
+    "nominativo": "der Mann", 
+    "caso": "Akkusativ" 
+  },
+  { 
+    "frase": "Die Tasche ___ Frau ist verloren gegangen.", 
+    "respostas_certas": ["der"], 
+    "nominativo": "die Frau", 
+    "caso": "Genitiv" 
+  },
+  { 
+    "frase": "Wir helfen ___ Kindern bei den Hausaufgaben.", 
+    "respostas_certas": ["den", "unseren"], 
+    "nominativo": "die Kinder", 
+    "caso": "Dativ" 
+  }
 ]
+
 
 type PracticePageProps = {
   totalQuestions: number
