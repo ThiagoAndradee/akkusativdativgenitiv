@@ -298,7 +298,7 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
           style={{ transition: "transform 0.4s ease-in-out" }}
         >
           <h2 className="text-xl font-bold">{feedback?.correct ? "Awesome!" : "Not really..."}</h2>
-          <p className="mt-2">Richtige Antwort(en): "{currentSentence.respostas_certas.join(", ")}"</p>
+          <p className="mt-2">Richtige Antwort(en): &quot;{currentSentence.respostas_certas.join(", ")}&quot;</p>
           <Button
             onClick={nextSentence}
             className={`w-full mt-4 py-2 rounded-full ${

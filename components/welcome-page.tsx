@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Image from "next/image"
 import mascotImage from "@/public/logo.png" // Coloque a imagem da mascote no diretório público e ajuste o caminho conforme necessário.
 
