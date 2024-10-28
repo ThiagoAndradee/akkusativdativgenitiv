@@ -167,8 +167,10 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
   const checkAnswer = () => {
     if (!currentSentence || hasAnswered) return
 
-    const isCorrect = currentSentence.respostas_certas.includes(userAnswer.toLowerCase())
-    setFeedback({
+    const isCorrect = currentSentence.respostas_certas.some(
+      (resposta) => resposta.toLowerCase() === userAnswer.trim().toLowerCase()
+    );
+        setFeedback({
       correct: isCorrect,
       message: isCorrect ? "Awesome!" : "Not really...",
     })
