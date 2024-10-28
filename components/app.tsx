@@ -2,15 +2,26 @@
 
 import { useState } from "react"
 import { WelcomePage } from "../components/welcome-page"
+import { TutorialPage } from "../components/tutorial-page"
 import { PracticePage } from "../components/practice-page"
 import { ResultsPage } from "../components/results-page"
 
 export function AppComponent() {
-  const [currentPage, setCurrentPage] = useState<"welcome" | "practice" | "results">("welcome")
+  const [currentPage, setCurrentPage] = useState<"welcome" | "tutorial" | "practice" | "results">("welcome")
   const [score, setScore] = useState(0)
-  const totalQuestions = 20
+  const [challengeType, setChallengeType] = useState<"quick" | "standard" | "challenge">("quick")
+  
+  // Define o número de perguntas com base no tipo de desafio selecionado
+  const totalQuestions = challengeType === "quick" ? 5 : challengeType === "standard" ? 10 : 20
 
-  const startChallenge = () => {
+  // Função para iniciar o tutorial
+  const startTutorial = (mode: "quick" | "standard" | "challenge") => {
+    setChallengeType(mode)
+    setCurrentPage("tutorial")
+  }
+
+  // Função para iniciar a prática após o tutorial
+  const startPractice = () => {
     setCurrentPage("practice")
   }
 
@@ -24,9 +35,15 @@ export function AppComponent() {
     setScore(0)
   }
 
+  const goBackToWelcome = () => {
+    setCurrentPage("welcome")
+  }
+
   switch (currentPage) {
     case "welcome":
-      return <WelcomePage onStart={startChallenge} />
+      return <WelcomePage onStart={startTutorial} />
+    case "tutorial":
+      return <TutorialPage onStart={startPractice} onBack={goBackToWelcome} />
     case "practice":
       return <PracticePage totalQuestions={totalQuestions} onComplete={endChallenge} />
     case "results":
