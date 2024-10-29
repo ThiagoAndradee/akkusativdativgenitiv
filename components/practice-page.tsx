@@ -264,7 +264,7 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
               value={userAnswer}
               onChange={handleInputChange}
               className="inline-block mx-2 p-1 text-center text-md border border-blue-300 rounded-md"
-              placeholder="der, die das?"
+              placeholder="der, die das...?"
               disabled={hasAnswered}
             />
             <span>{afterBlank}</span>
