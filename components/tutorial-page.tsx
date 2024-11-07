@@ -37,27 +37,31 @@ export function TutorialPage({ onStart, onBack }: TutorialPageProps) {
         {/* Tabela de Artigos Definidos */}
         <div className="mb-8">
             <h2 className="text-md font-semibold mb-2">Defined articles:</h2>
-            <div className="grid grid-cols-4 gap-2">
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Nominativ</div>
-                <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Der</div>
-                <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Die</div>
-                <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Das</div>
+            <div className="grid grid-cols-5 gap-2">
+              <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Nominativ</div>
+              <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Der -e</div>
+              <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Die -e</div>
+              <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Das -e</div>
+              <div className="bg-green-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Die -en</div>
 
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Akkusativ</div>
-                <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Den</div>
-                <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Die</div>
-                <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Das</div>
+              <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Akkusativ</div>
+              <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Den -en</div>
+              <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Die -e</div>
+              <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Das -e</div>
+              <div className="bg-green-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Die -en</div>
 
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Dativ</div>
-                <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Dem</div>
-                <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Der</div>
-                <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Dem</div>
+              <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Dativ</div>
+              <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Dem -en</div>
+              <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Der -en</div>
+              <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Dem -en</div>
+              <div className="bg-green-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Den -en</div>
 
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Genitiv</div>
-                <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Des</div>
-                <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Der</div>
-                <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Des</div>
-            </div>
+              <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Genitiv</div>
+              <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Des -en</div>
+              <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Der -en</div>
+              <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Des -en</div>
+              <div className="bg-green-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Der -en</div>
+          </div>
         </div>
 
         {/* Tabela de Artigos Indefinidos */}
@@ -65,22 +69,22 @@ export function TutorialPage({ onStart, onBack }: TutorialPageProps) {
         <div className="mb-8">
             <h2 className="text-md font-semibold mb-2">Undefined articles:</h2>
             <div className="grid grid-cols-4 gap-2">
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Nominativ</div>
+                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Nominativ</div>
                 <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Ein</div>
                 <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Eine</div>
                 <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Ein</div>
 
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Akkusativ</div>
+                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Akkusativ</div>
                 <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Einen</div>
                 <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Eine</div>
                 <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Ein</div>
 
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Dativ</div>
+                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Dativ</div>
                 <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Einem</div>
                 <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Einer</div>
                 <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Einem</div>
 
-                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Genitiv</div>
+                <div className="bg-[#1DA0C4] text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-sm">Genitiv</div>
                 <div className="bg-black text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Eines</div>
                 <div className="bg-red-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Einer</div>
                 <div className="bg-yellow-500 text-white py-3 px-1 min-h-[3rem] rounded-md font-semibold text-center text-md">Eines</div>

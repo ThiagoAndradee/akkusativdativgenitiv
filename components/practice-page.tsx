@@ -14,6 +14,7 @@ type Sentence = {
   respostas_certas: string[][];
   nominativo: string;
   caso: string;
+  explicacao: string;
 };
 
 const allSentences: Sentence[] = [
@@ -22,123 +23,570 @@ const allSentences: Sentence[] = [
     respostas_certas: [["den", "alten"], ["einen", "alten"]],
     nominativo: "der alte Lehrer",
     caso: "Akkusativ",
+    explicacao: `"Kennen" exige o caso acusativo e "Lehrer" é masculino (der Lehrer), portanto usamos "den alten" ou "einen alten".`
   },
   {
     frase: "Das Buch ___ ___ (jung) Schülers ist interessant.",
     respostas_certas: [["des", "jungen"]],
     nominativo: "der junge Schüler",
     caso: "Genitiv",
+    explicacao: `"Das Buch des jungen Schülers" está no genitivo porque estamos indicando posse e "Schüler" é masculino. Usamos "des jungen" para a declinação correta.`
   },
   {
     frase: "___ ___ (klein) Mädchen spielt draußen.",
     respostas_certas: [["Das", "kleine"], ["Ein", "kleines"]],
     nominativo: "das kleine Mädchen",
     caso: "Nominativ",
+    explicacao: `"Mädchen" é neutro, e a frase está no nominativo, então usamos "das kleine" ou "ein kleines".`
   },
   {
     frase: "Ich gebe ___ ___ (nett) Frau ein schönes Geschenk.",
     respostas_certas: [["der", "netten"], ["einer", "netten"]],
     nominativo: "die nette Frau",
     caso: "Dativ",
+    explicacao: `"Geben" exige dativo, e "Frau" é feminino (die Frau), então usamos "der netten" ou "einer netten".`
   },
   {
     frase: "___ ___ (neu) Auto steht auf dem Parkplatz.",
     respostas_certas: [["Das", "neue"], ["Ein", "neues"]],
     nominativo: "das neue Auto",
     caso: "Nominativ",
+    explicacao: `"Auto" é neutro e a frase está no nominativo. Portanto, usamos "das neue" ou "ein neues".`
   },
   {
-    frase: "Wir besuchen ___ ___ (freundlich) Großeltern morgen.",
-    respostas_certas: [["die", "freundlichen"], ["unsere", "freundlichen"]],
-    nominativo: "die freundlichen Großeltern",
-    caso: "Akkusativ",
-  },
-  {
-    frase: "Das Haus ___ ___ (lieb) Familie ist sehr alt.",
-    respostas_certas: [["der", "lieben"]],
-    nominativo: "die liebe Familie",
-    caso: "Genitiv",
-  },
-  {
-    frase: "Ich spreche mit ___ ___ (klug) Lehrer über das Projekt.",
-    respostas_certas: [["dem", "klugen"], ["einem", "klugen"]],
-    nominativo: "der kluge Lehrer",
+    frase: "Wir helfen ___ ___ (klein) Kind bei den Hausaufgaben.",
+    respostas_certas: [["dem", "kleinen"], ["einem", "kleinen"]],
+    nominativo: "das kleine Kind",
     caso: "Dativ",
+    explicacao: `"Helfen" exige o dativo e "Kind" é neutro (das Kind), por isso usamos "dem kleinen" ou "einem kleinen".`
   },
   {
-    frase: "___ ___ (alt) Stuhl ist kaputt.",
-    respostas_certas: [["Der", "alte"], ["Ein", "alter"]],
-    nominativo: "der alte Stuhl",
+    frase: "Die Mutter ___ ___ (lieb) Jungen ist da.",
+    respostas_certas: [["des", "lieben"]],
+    nominativo: "der liebe Junge",
+    caso: "Genitiv",
+    explicacao: `"Die Mutter des lieben Jungen" está no genitivo para indicar posse, e "Junge" é masculino (der Junge). Usamos "des lieben".`
+  },
+  {
+    frase: "___ ___ (schön) Blume steht auf dem Tisch.",
+    respostas_certas: [["Die", "schöne"], ["Eine", "schöne"]],
+    nominativo: "die schöne Blume",
     caso: "Nominativ",
+    explicacao: `"Blume" é feminino (die Blume) e a frase está no nominativo, então usamos "die schöne" ou "eine schöne".`
   },
   {
-    frase: "Ich habe ___ ___ (braun) Hund gesehen.",
-    respostas_certas: [["den", "braunen"], ["einen", "braunen"]],
-    nominativo: "der braune Hund",
+    frase: "Er besucht ___ ___ (alt) Freunde in der Stadt.",
+    respostas_certas: [["die", "alten"], ["seine", "alten"]],
+    nominativo: "die alten Freunde",
     caso: "Akkusativ",
+    explicacao: `"Besuchen" exige o acusativo e "Freunde" é plural. Assim, usamos "die alten" ou "seine alten".`
   },
   {
-    frase: "Die Farbe ___ ___ (neu) Wagens ist schwarz.",
+    frase: "Ich spreche mit ___ ___ (interessant) Professor über das Thema.",
+    respostas_certas: [["dem", "interessanten"], ["einem", "interessanten"]],
+    nominativo: "der interessante Professor",
+    caso: "Dativ",
+    explicacao: `"Sprechen mit" exige o dativo e "Professor" é masculino (der Professor), por isso usamos "dem interessanten" ou "einem interessanten".`
+  },
+  {
+    frase: "___ ___ (neu) Bücher liegen auf dem Tisch.",
+    respostas_certas: [["Die", "neuen"], ["Meine", "neuen"]],
+    nominativo: "die neuen Bücher",
+    caso: "Nominativ",
+    explicacao: `"Bücher" é plural, e a frase está no nominativo, então usamos "die neuen" ou "meine neuen".`
+  },
+  {
+    frase: "Das Haus ___ ___ (reich) Mannes ist sehr groß.",
+    respostas_certas: [["des", "reichen"]],
+    nominativo: "der reiche Mann",
+    caso: "Genitiv",
+    explicacao: `"Das Haus des reichen Mannes" está no genitivo para indicar posse e "Mann" é masculino. Usamos "des reichen".`
+  },
+  {
+    frase: "Er schenkt ___ ___ (schön) Frau Blumen.",
+    respostas_certas: [["der", "schönen"], ["einer", "schönen"]],
+    nominativo: "die schöne Frau",
+    caso: "Dativ",
+    explicacao: `"Schenken" exige o dativo e "Frau" é feminino, então usamos "der schönen" ou "einer schönen".`
+  },
+  {
+    frase: "___ ___ (groß) Park ist sehr schön im Frühling.",
+    respostas_certas: [["Der", "große"], ["Ein", "großer"]],
+    nominativo: "der große Park",
+    caso: "Nominativ",
+    explicacao: `"Park" é masculino (der Park) e a frase está no nominativo, então usamos "der große" ou "ein großer".`
+  },
+  {
+    frase: "Ich habe ___ ___ (teuer) Laptop verloren.",
+    respostas_certas: [["den", "teuren"], ["einen", "teuren"]],
+    nominativo: "der teure Laptop",
+    caso: "Akkusativ",
+    explicacao: `"Haben" exige o acusativo e "Laptop" é masculino, então usamos "den teuren" ou "einen teuren".`
+  },
+  {
+    frase: "Sie sitzt auf ___ ___ (klein) Stuhl.",
+    respostas_certas: [["dem", "kleinen"], ["einem", "kleinen"]],
+    nominativo: "der kleine Stuhl",
+    caso: "Dativ",
+    explicacao: `"Sitzen auf" com localização estática exige o dativo e "Stuhl" é masculino, por isso usamos "dem kleinen" ou "einem kleinen".`
+  },
+  {
+    frase: "Die Farbe ___ ___ (neu) Autos ist auffällig.",
     respostas_certas: [["des", "neuen"]],
-    nominativo: "der neue Wagen",
+    nominativo: "das neue Auto",
     caso: "Genitiv",
+    explicacao: `"Die Farbe des neuen Autos" está no genitivo para indicar posse e "Auto" é neutro, então usamos "des neuen".`
   },
   {
-    frase: "Er erzählt ___ ___ (alt) Freund eine Geschichte.",
-    respostas_certas: [["dem", "alten"], ["einem", "alten"]],
-    nominativo: "der alte Freund",
-    caso: "Dativ",
-  },
-  {
-    frase: "___ ___ (interessant) Buch liegt auf dem Tisch.",
-    respostas_certas: [["Das", "interessante"], ["Ein", "interessantes"]],
+    frase: "Er liest ___ ___ (interessant) Buch über Geschichte.",
+    respostas_certas: [["das", "interessante"], ["ein", "interessantes"]],
     nominativo: "das interessante Buch",
-    caso: "Nominativ",
-  },
-  {
-    frase: "Wir haben ___ ___ (spannend) Film gestern gesehen.",
-    respostas_certas: [["den", "spannenden"], ["einen", "spannenden"]],
-    nominativo: "der spannende Film",
     caso: "Akkusativ",
+    explicacao: `"Lesen" exige o acusativo e "Buch" é neutro, então usamos "das interessante" ou "ein interessantes".`
   },
   {
-    frase: "Das Handy ___ ___ (best) Freundes ist neu.",
-    respostas_certas: [["des", "besten"]],
-    nominativo: "der beste Freund",
+    frase: "___ ___ (alt) Mann arbeitet immer noch hart.",
+    respostas_certas: [["Der", "alte"], ["Ein", "alter"]],
+    nominativo: "der alte Mann",
+    caso: "Nominativ",
+    explicacao: `"Mann" é masculino e a frase está no nominativo, então usamos "der alte" ou "ein alter".`
+  },
+  {
+    frase: "Ich kenne ___ ___ (alt) Lehrer aus der Schule.",
+    respostas_certas: [["den", "alten"], ["einen", "alten"]],
+    nominativo: "der alte Lehrer",
+    caso: "Akkusativ",
+    explicacao: `"Kennen" exige o caso acusativo e "Lehrer" é masculino (der Lehrer), portanto usamos "den alten" ou "einen alten".`
+  },
+  {
+    frase: "Das Buch ___ ___ (jung) Schülers ist interessant.",
+    respostas_certas: [["des", "jungen"]],
+    nominativo: "der junge Schüler",
     caso: "Genitiv",
+    explicacao: `"Das Buch des jungen Schülers" está no genitivo porque estamos indicando posse e "Schüler" é masculino. Usamos "des jungen" para a declinação correta.`
   },
   {
-    frase: "Ich schreibe ___ ___ (freundlich) Lehrer eine E-Mail.",
-    respostas_certas: [["dem", "freundlichen"], ["einem", "freundlichen"]],
-    nominativo: "der freundliche Lehrer",
-    caso: "Dativ",
-  },
-  {
-    frase: "___ ___ (jung) Kind spielt im Garten.",
-    respostas_certas: [["Das", "junge"], ["Ein", "junges"]],
-    nominativo: "das junge Kind",
+    frase: "___ ___ (klein) Mädchen spielt draußen.",
+    respostas_certas: [["Das", "kleine"], ["Ein", "kleines"]],
+    nominativo: "das kleine Mädchen",
     caso: "Nominativ",
+    explicacao: `"Mädchen" é neutro, e a frase está no nominativo, então usamos "das kleine" ou "ein kleines".`
   },
   {
-    frase: "Ich kenne ___ ___ (freundlich) Mann aus der Nachbarschaft.",
-    respostas_certas: [["den", "freundlichen"], ["einen", "freundlichen"]],
-    nominativo: "der freundliche Mann",
+    frase: "Ich gebe ___ ___ (nett) Frau ein schönes Geschenk.",
+    respostas_certas: [["der", "netten"], ["einer", "netten"]],
+    nominativo: "die nette Frau",
+    caso: "Dativ",
+    explicacao: `"Geben" exige dativo, e "Frau" é feminino (die Frau), então usamos "der netten" ou "einer netten".`
+  },
+  {
+    frase: "___ ___ (neu) Auto steht auf dem Parkplatz.",
+    respostas_certas: [["Das", "neue"], ["Ein", "neues"]],
+    nominativo: "das neue Auto",
+    caso: "Nominativ",
+    explicacao: `"Auto" é neutro e a frase está no nominativo. Portanto, usamos "das neue" ou "ein neues".`
+  },
+  {
+    frase: "Wir helfen ___ ___ (klein) Kind bei den Hausaufgaben.",
+    respostas_certas: [["dem", "kleinen"], ["einem", "kleinen"]],
+    nominativo: "das kleine Kind",
+    caso: "Dativ",
+    explicacao: `"Helfen" exige o dativo e "Kind" é neutro (das Kind), por isso usamos "dem kleinen" ou "einem kleinen".`
+  },
+  {
+    frase: "Die Mutter ___ ___ (lieb) Jungen ist da.",
+    respostas_certas: [["des", "lieben"]],
+    nominativo: "der liebe Junge",
+    caso: "Genitiv",
+    explicacao: `"Die Mutter des lieben Jungen" está no genitivo para indicar posse, e "Junge" é masculino (der Junge). Usamos "des lieben".`
+  },
+  {
+    frase: "___ ___ (schön) Blume steht auf dem Tisch.",
+    respostas_certas: [["Die", "schöne"], ["Eine", "schöne"]],
+    nominativo: "die schöne Blume",
+    caso: "Nominativ",
+    explicacao: `"Blume" é feminino (die Blume) e a frase está no nominativo, então usamos "die schöne" ou "eine schöne".`
+  },
+  {
+    frase: "Er besucht ___ ___ (alt) Freunde in der Stadt.",
+    respostas_certas: [["die", "alten"], ["seine", "alten"]],
+    nominativo: "die alten Freunde",
     caso: "Akkusativ",
+    explicacao: `"Besuchen" exige o acusativo e "Freunde" é plural. Assim, usamos "die alten" ou "seine alten".`
   },
   {
-    frase: "Die Tasche ___ ___ (nett) Frau ist verloren gegangen.",
+    frase: "Ich spreche mit ___ ___ (interessant) Professor über das Thema.",
+    respostas_certas: [["dem", "interessanten"], ["einem", "interessanten"]],
+    nominativo: "der interessante Professor",
+    caso: "Dativ",
+    explicacao: `"Sprechen mit" exige o dativo e "Professor" é masculino (der Professor), por isso usamos "dem interessanten" ou "einem interessanten".`
+  },
+  {
+    frase: "___ ___ (neu) Bücher liegen auf dem Tisch.",
+    respostas_certas: [["Die", "neuen"], ["Meine", "neuen"]],
+    nominativo: "die neuen Bücher",
+    caso: "Nominativ",
+    explicacao: `"Bücher" é plural, e a frase está no nominativo, então usamos "die neuen" ou "meine neuen".`
+  },
+  {
+    frase: "Das Haus ___ ___ (reich) Mannes ist sehr groß.",
+    respostas_certas: [["des", "reichen"]],
+    nominativo: "der reiche Mann",
+    caso: "Genitiv",
+    explicacao: `"Das Haus des reichen Mannes" está no genitivo para indicar posse e "Mann" é masculino. Usamos "des reichen".`
+  },
+  {
+    frase: "Er schenkt ___ ___ (schön) Frau Blumen.",
+    respostas_certas: [["der", "schönen"], ["einer", "schönen"]],
+    nominativo: "die schöne Frau",
+    caso: "Dativ",
+    explicacao: `"Schenken" exige o dativo e "Frau" é feminino, então usamos "der schönen" ou "einer schönen".`
+  },
+  {
+    frase: "___ ___ (groß) Park ist sehr schön im Frühling.",
+    respostas_certas: [["Der", "große"], ["Ein", "großer"]],
+    nominativo: "der große Park",
+    caso: "Nominativ",
+    explicacao: `"Park" é masculino (der Park) e a frase está no nominativo, então usamos "der große" ou "ein großer".`
+  },
+  {
+    frase: "Ich habe ___ ___ (teuer) Laptop verloren.",
+    respostas_certas: [["den", "teuren"], ["einen", "teuren"]],
+    nominativo: "der teure Laptop",
+    caso: "Akkusativ",
+    explicacao: `"Haben" exige o acusativo e "Laptop" é masculino, então usamos "den teuren" ou "einen teuren".`
+  },
+  {
+    frase: "Sie sitzt auf ___ ___ (klein) Stuhl.",
+    respostas_certas: [["dem", "kleinen"], ["einem", "kleinen"]],
+    nominativo: "der kleine Stuhl",
+    caso: "Dativ",
+    explicacao: `"Sitzen auf" com localização estática exige o dativo e "Stuhl" é masculino, por isso usamos "dem kleinen" ou "einem kleinen".`
+  },
+  {
+    frase: "Die Farbe ___ ___ (neu) Autos ist auffällig.",
+    respostas_certas: [["des", "neuen"]],
+    nominativo: "das neue Auto",
+    caso: "Genitiv",
+    explicacao: `"Die Farbe des neuen Autos" está no genitivo para indicar posse e "Auto" é neutro, então usamos "des neuen".`
+  },
+  {
+    frase: "Er liest ___ ___ (interessant) Buch über Geschichte.",
+    respostas_certas: [["das", "interessante"], ["ein", "interessantes"]],
+    nominativo: "das interessante Buch",
+    caso: "Akkusativ",
+    explicacao: `"Lesen" exige o acusativo e "Buch" é neutro, então usamos "das interessante" ou "ein interessantes".`
+  },
+  {
+    frase: "___ ___ (alt) Mann arbeitet immer noch hart.",
+    respostas_certas: [["Der", "alte"], ["Ein", "alter"]],
+    nominativo: "der alte Mann",
+    caso: "Nominativ",
+    explicacao: `"Mann" é masculino e a frase está no nominativo, então usamos "der alte" ou "ein alter".`
+  },
+  {
+    frase: "Er gibt ___ ___ (klein) Hund zu seiner Schwester.",
+    respostas_certas: [["den", "kleinen"], ["einen", "kleinen"]],
+    nominativo: "der kleine Hund",
+    caso: "Akkusativ",
+    explicacao: `"Geben" exige o acusativo e "Hund" é masculino, então usamos "den kleinen" ou "einen kleinen".`
+  },
+  {
+    frase: "Wir schauen ___ ___ (alt) Fotoalben von früher an.",
+    respostas_certas: [["die", "alten"], ["unsere", "alten"]],
+    nominativo: "die alten Fotoalben",
+    caso: "Akkusativ",
+    explicacao: `"Anschauen" exige o acusativo e "Fotoalben" é plural, então usamos "die alten" ou "unsere alten".`
+  },
+  {
+    frase: "Die Geschichte ___ ___ (berühmt) Schriftstellers ist spannend.",
+    respostas_certas: [["des", "berühmten"]],
+    nominativo: "der berühmte Schriftsteller",
+    caso: "Genitiv",
+    explicacao: `"Die Geschichte des berühmten Schriftstellers" usa genitivo para indicar posse, e "Schriftsteller" é masculino, então usamos "des berühmten".`
+  },
+  {
+    frase: "___ ___ (jung) Kinder spielen auf der Wiese.",
+    respostas_certas: [["Die", "jungen"]],
+    nominativo: "die jungen Kinder",
+    caso: "Nominativ",
+    explicacao: `"Kinder" é plural e a frase está no nominativo, então usamos "die jungen".`
+  },
+  {
+    frase: "Er hilft ___ ___ (schön) Frau mit den Einkäufen.",
+    respostas_certas: [["der", "schönen"], ["einer", "schönen"]],
+    nominativo: "die schöne Frau",
+    caso: "Dativ",
+    explicacao: `"Helfen" exige o dativo e "Frau" é feminino, então usamos "der schönen" ou "einer schönen".`
+  },
+  {
+    frase: "Er gibt ___ ___ (nett) Kindern ein Geschenk.",
+    respostas_certas: [["den", "netten"]],
+    nominativo: "die netten Kinder",
+    caso: "Dativ",
+    explicacao: `"Geben" exige o dativo e "Kinder" é plural, então usamos "den netten".`
+  },
+  {
+    frase: "___ ___ (freundlich) Lehrer hilft mir immer.",
+    respostas_certas: [["Der", "freundliche"], ["Ein", "freundlicher"]],
+    nominativo: "der freundliche Lehrer",
+    caso: "Nominativ",
+    explicacao: `"Lehrer" é masculino e está no nominativo, então usamos "der freundliche" ou "ein freundlicher".`
+  },
+  {
+    frase: "Ich höre ___ ___ (leise) Musik.",
+    respostas_certas: [["die", "leise"], ["eine", "leise"]],
+    nominativo: "die leise Musik",
+    caso: "Akkusativ",
+    explicacao: `"Hören" exige o acusativo e "Musik" é feminino, então usamos "die leise" ou "eine leise".`
+  },
+  {
+    frase: "Die Blumen ___ ___ (freundlich) Frau sind schön.",
+    respostas_certas: [["der", "freundlichen"]],
+    nominativo: "die freundliche Frau",
+    caso: "Genitiv",
+    explicacao: `"Die Blumen der freundlichen Frau" usa o genitivo para indicar posse, e "Frau" é feminino, então usamos "der freundlichen".`
+  },
+  {
+    frase: "Er spricht mit ___ ___ (alt) Lehrer.",
+    respostas_certas: [["dem", "alten"], ["einem", "alten"]],
+    nominativo: "der alte Lehrer",
+    caso: "Dativ",
+    explicacao: `"Sprechen mit" exige o dativo e "Lehrer" é masculino, então usamos "dem alten" ou "einem alten".`
+  },
+  {
+    frase: "___ ___ (neu) Schule ist sehr groß.",
+    respostas_certas: [["Die", "neue"], ["Eine", "neue"]],
+    nominativo: "die neue Schule",
+    caso: "Nominativ",
+    explicacao: `"Schule" é feminino (die Schule) e a frase está no nominativo, então usamos "die neue" ou "eine neue".`
+  },
+  {
+    frase: "Wir feiern den Geburtstag ___ ___ (gut) Freundes.",
+    respostas_certas: [["des", "guten"]],
+    nominativo: "der gute Freund",
+    caso: "Genitiv",
+    explicacao: `"Feiern des guten Freundes" usa o genitivo para posse, e "Freund" é masculino, então usamos "des guten".`
+  },
+  {
+    frase: "___ ___ (interessant) Idee wurde besprochen.",
+    respostas_certas: [["Die", "interessante"], ["Eine", "interessante"]],
+    nominativo: "die interessante Idee",
+    caso: "Nominativ",
+    explicacao: `"Idee" é feminino e está no nominativo, então usamos "die interessante" ou "eine interessante".`
+  },
+  {
+    frase: "Er wohnt bei ___ ___ (alt) Freundin.",
+    respostas_certas: [["der", "alten"], ["einer", "alten"]],
+    nominativo: "die alte Freundin",
+    caso: "Dativ",
+    explicacao: `"Wohnen bei" exige o dativo e "Freundin" é feminino, então usamos "der alten" ou "einer alten".`
+  },
+  {
+    frase: "Das Auto ___ ___ (alt) Mannes ist neu.",
+    respostas_certas: [["des", "alten"]],
+    nominativo: "der alte Mann",
+    caso: "Genitiv",
+    explicacao: `"Das Auto des alten Mannes" usa genitivo para posse e "Mann" é masculino, então usamos "des alten".`
+  },
+  {
+    frase: "___ ___ (groß) Stadt hat viele Einwohner.",
+    respostas_certas: [["Die", "große"], ["Eine", "große"]],
+    nominativo: "die große Stadt",
+    caso: "Nominativ",
+    explicacao: `"Stadt" é feminino e está no nominativo, então usamos "die große" ou "eine große".`
+  },
+  {
+    frase: "Ich lese ___ ___ (spannend) Buch.",
+    respostas_certas: [["das", "spannende"], ["ein", "spannendes"]],
+    nominativo: "das spannende Buch",
+    caso: "Akkusativ",
+    explicacao: `"Lesen" exige o acusativo e "Buch" é neutro, então usamos "das spannende" ou "ein spannendes".`
+  },
+  {
+    frase: "Wir helfen ___ ___ (jung) Mann.",
+    respostas_certas: [["dem", "jungen"], ["einem", "jungen"]],
+    nominativo: "der junge Mann",
+    caso: "Dativ",
+    explicacao: `"Helfen" exige o dativo e "Mann" é masculino, então usamos "dem jungen" ou "einem jungen".`
+  },
+  {
+    frase: "Die Katze ___ ___ (klein) Mädchens ist süß.",
+    respostas_certas: [["des", "kleinen"]],
+    nominativo: "das kleine Mädchen",
+    caso: "Genitiv",
+    explicacao: `"Die Katze des kleinen Mädchens" está no genitivo para posse e "Mädchen" é neutro, então usamos "des kleinen".`
+  },
+  {
+    frase: "Er schenkt ___ ___ (alt) Frau Blumen.",
+    respostas_certas: [["der", "alten"], ["einer", "alten"]],
+    nominativo: "die alte Frau",
+    caso: "Dativ",
+    explicacao: `"Schenken" exige o dativo e "Frau" é feminino, então usamos "der alten" ou "einer alten".`
+  },
+  {
+    frase: "Die Kinder ___ ___ (nett) Frau spielen im Garten.",
     respostas_certas: [["der", "netten"]],
     nominativo: "die nette Frau",
     caso: "Genitiv",
+    explicacao: `"Die Kinder der netten Frau" usa genitivo para posse e "Frau" é feminino, então usamos "der netten".`
   },
   {
-    frase: "Wir helfen ___ ___ (klug) Kindern bei den Hausaufgaben.",
-    respostas_certas: [["den", "klugen"], ["unseren", "klugen"]],
-    nominativo: "die klugen Kinder",
-    caso: "Dativ",
+    frase: "Ich sehe ___ ___ (blau) Himmel.",
+    respostas_certas: [["den", "blauen"]],
+    nominativo: "der blaue Himmel",
+    caso: "Akkusativ",
+    explicacao: `"Sehen" exige o acusativo e "Himmel" é masculino, então usamos "den blauen".`
   },
-  
+  {
+    frase: "___ ___ (klein) Dorf liegt am Fluss.",
+    respostas_certas: [["Das", "kleine"], ["Ein", "kleines"]],
+    nominativo: "das kleine Dorf",
+    caso: "Nominativ",
+    explicacao: `"Dorf" é neutro e está no nominativo, então usamos "das kleine" ou "ein kleines".`
+  },
+  {
+    frase: "Wir gedenken ___ ___ (verstorben) Großeltern.",
+    respostas_certas: [["der", "verstorbenen"]],
+    nominativo: "die verstorbenen Großeltern",
+    caso: "Genitiv",
+    explicacao: `"Gedenken" exige genitivo e "Großeltern" é plural, então usamos "der verstorbenen".`
+  },
+  {
+    frase: "Ich gebe ___ ___ (jung) Frau ein Geschenk.",
+    respostas_certas: [["der", "jungen"], ["einer", "jungen"]],
+    nominativo: "die junge Frau",
+    caso: "Dativ",
+    explicacao: `"Geben" exige o dativo e "Frau" é feminino, então usamos "der jungen" ou "einer jungen".`
+  },
+  {
+    frase: "Die Blätter ___ ___ (alt) Baumes sind gefallen.",
+    respostas_certas: [["des", "alten"]],
+    nominativo: "der alte Baum",
+    caso: "Genitiv",
+    explicacao: `"Die Blätter des alten Baumes" usa o genitivo para posse e "Baum" é masculino, então usamos "des alten".`
+  },
+  {
+    frase: "Er gibt ___ ___ (klein) Hund Wasser.",
+    respostas_certas: [["dem", "kleinen"], ["einem", "kleinen"]],
+    nominativo: "der kleine Hund",
+    caso: "Dativ",
+    explicacao: `"Geben" exige o dativo e "Hund" é masculino, então usamos "dem kleinen" ou "einem kleinen".`
+  },
+  {
+    frase: "___ ___ (spannend) Filme laufen im Kino.",
+    respostas_certas: [["Die", "spannenden"]],
+    nominativo: "die spannenden Filme",
+    caso: "Nominativ",
+    explicacao: `"Filme" é plural e está no nominativo, então usamos "die spannenden".`
+  },
+  {
+    frase: "Das Haus ___ ___ (reich) Frau ist schön.",
+    respostas_certas: [["der", "reichen"]],
+    nominativo: "die reiche Frau",
+    caso: "Genitiv",
+    explicacao: `"Das Haus der reichen Frau" usa o genitivo para posse e "Frau" é feminino, então usamos "der reichen".`
+  },
+  {
+    frase: "Ich finde ___ ___ (alt) Buch interessant.",
+    respostas_certas: [["das", "alte"], ["ein", "altes"]],
+    nominativo: "das alte Buch",
+    caso: "Akkusativ",
+    explicacao: `"Finden" exige o acusativo e "Buch" é neutro, então usamos "das alte" ou "ein altes".`
+  },
+  {
+    frase: "Wir gratulieren ___ ___ (jung) Paar.",
+    respostas_certas: [["dem", "jungen"]],
+    nominativo: "das junge Paar",
+    caso: "Dativ",
+    explicacao: `"Gratulieren" exige o dativo e "Paar" é neutro, então usamos "dem jungen".`
+  },
+  {
+    frase: "Die Häuser ___ ___ (reich) Familie sind groß.",
+    respostas_certas: [["der", "reichen"]],
+    nominativo: "die reiche Familie",
+    caso: "Genitiv",
+    explicacao: `"Die Häuser der reichen Familie" usa o genitivo para posse e "Familie" é feminino, então usamos "der reichen".`
+  },
+  {
+    frase: "Ich schreibe ___ ___ (gut) Freund eine Nachricht.",
+    respostas_certas: [["dem", "guten"], ["einem", "guten"]],
+    nominativo: "der gute Freund",
+    caso: "Dativ",
+    explicacao: `"Schreiben" exige o dativo e "Freund" é masculino, então usamos "dem guten" ou "einem guten".`
+  },
+  {
+    frase: "Wir warten auf ___ ___ (neu) Lehrer.",
+    respostas_certas: [["den", "neuen"]],
+    nominativo: "der neue Lehrer",
+    caso: "Akkusativ",
+    explicacao: `"Warten auf" exige o acusativo e "Lehrer" é masculino, então usamos "den neuen".`
+  },
+  {
+    frase: "Die Farben ___ ___ (alt) Autos sind verblasst.",
+    respostas_certas: [["des", "alten"]],
+    nominativo: "das alte Auto",
+    caso: "Genitiv",
+    explicacao: `"Die Farben des alten Autos" usa genitivo para posse e "Auto" é neutro, então usamos "des alten".`
+  },
+  {
+    frase: "___ ___ (neu) Computer funktioniert gut.",
+    respostas_certas: [["Der", "neue"], ["Ein", "neuer"]],
+    nominativo: "der neue Computer",
+    caso: "Nominativ",
+    explicacao: `"Computer" é masculino e está no nominativo, então usamos "der neue" ou "ein neuer".`
+  },
+  {
+    frase: "Er spricht über ___ ___ (alt) Film.",
+    respostas_certas: [["den", "alten"]],
+    nominativo: "der alte Film",
+    caso: "Akkusativ",
+    explicacao: `"Sprechen über" exige o acusativo e "Film" é masculino, então usamos "den alten".`
+  },
+  {
+    frase: "Die Mutter ___ ___ (klein) Kindes ist besorgt.",
+    respostas_certas: [["des", "kleinen"]],
+    nominativo: "das kleine Kind",
+    caso: "Genitiv",
+    explicacao: `"Die Mutter des kleinen Kindes" usa o genitivo para posse e "Kind" é neutro, então usamos "des kleinen".`
+  },
+  {
+    frase: "Ich schenke ___ ___ (alt) Lehrer ein Buch.",
+    respostas_certas: [["dem", "alten"], ["einem", "alten"]],
+    nominativo: "der alte Lehrer",
+    caso: "Dativ",
+    explicacao: `"Schenken" exige o dativo e "Lehrer" é masculino, então usamos "dem alten" ou "einem alten".`
+  },
+  {
+    frase: "Das Zimmer ___ ___ (jung) Frau ist ordentlich.",
+    respostas_certas: [["der", "jungen"]],
+    nominativo: "die junge Frau",
+    caso: "Genitiv",
+    explicacao: `"Das Zimmer der jungen Frau" usa o genitivo para posse e "Frau" é feminino, então usamos "der jungen".`
+  },
+  {
+    frase: "Ich trinke ___ ___ (kalt) Wasser.",
+    respostas_certas: [["das", "kalte"], ["ein", "kaltes"]],
+    nominativo: "das kalte Wasser",
+    caso: "Akkusativ",
+    explicacao: `"Trinken" exige o acusativo e "Wasser" é neutro (das Wasser), por isso usamos "das kalte" ou "ein kaltes".`
+  },
+  {
+    frase: "Die Farbe ___ ___ (grün) Blattes ist schön.",
+    respostas_certas: [["des", "grünen"]],
+    nominativo: "das grüne Blatt",
+    caso: "Genitiv",
+    explicacao: `"Blattes" no genitivo indica posse e "Blatt" é neutro, então usamos "des grünen".`
+  },
+  {
+    frase: "___ ___ (schnell) Auto fährt vorbei.",
+    respostas_certas: [["Das", "schnelle"], ["Ein", "schnelles"]],
+    nominativo: "das schnelle Auto",
+    caso: "Nominativ",
+    explicacao: `"Auto" é neutro (das Auto) e a frase está no nominativo, então usamos "das schnelle" ou "ein schnelles".`
+  }
 ];
+
 
 type PracticePageProps = {
   totalQuestions: number;
@@ -157,6 +605,7 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
   const [hasAnswered, setHasAnswered] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [streak, setStreak] = useState(0);
+  const [confirmSubmit, setConfirmSubmit] = useState(false); // Estado para confirmação de envio
 
   useEffect(() => {
     const shuffled = [...allSentences].sort(() => Math.random() - 0.5).slice(0, totalQuestions);
@@ -177,7 +626,13 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
 
     setFeedback({
       correct: isCorrect,
-      message: isCorrect ? "Awesome!" : "Not really...",
+      message: isCorrect
+        ? `Richtige Antwort(en): ${currentSentence.respostas_certas
+          .map((respostas) => `"${respostas.join(" ")}"`)
+          .join(", ")}. ${currentSentence.explicacao}`
+        : `Richtige Antwort(en): ${currentSentence.respostas_certas
+            .map((respostas) => `"${respostas.join(" ")}"`)
+            .join(", ")}. ${currentSentence.explicacao}`,
     });
     setShowFeedbackPanel(true);
     setHasAnswered(true);
@@ -197,8 +652,17 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
     }
   };
 
+  const handleSubmitClick = () => {
+    if (confirmSubmit) {
+      checkAnswer();
+      setConfirmSubmit(false);
+    } else {
+      setConfirmSubmit(true); // Solicitar a confirmação de envio
+    }
+  };
+
   const nextSentence = () => {
-    setShowFeedbackPanel(false); // Esconder o painel antes de passar para a próxima frase
+    setShowFeedbackPanel(false);
 
     if (currentSentenceIndex < sentences.length - 1) {
       setCurrentSentenceIndex((prev) => prev + 1);
@@ -206,6 +670,7 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
       setUserAnswer2("");
       setFeedback(null);
       setHasAnswered(false);
+      setConfirmSubmit(false); // Reiniciar a confirmação de envio
     } else {
       onComplete(correctAnswers);
     }
@@ -225,7 +690,6 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
 
   const progressPercentage = ((answeredQuestions + (hasAnswered ? 1 : 0)) / totalQuestions) * 100;
 
-  // Dividir a frase em partes usando o delimitador "___"
   const parts = currentSentence.frase.split("___");
 
   return (
@@ -315,10 +779,12 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
       {/* Botão de submissão fixo próximo ao bottom-0 */}
       <div className="p-6 fixed bottom-0 w-full bg-[#f5f9ff]">
         <Button
-          onClick={hasAnswered ? nextSentence : checkAnswer}
-          className="w-full py-4 text-lg font-semibold rounded-8 bg-[#31CD9E] text-white hover:bg-[#196951]"
+          onClick={hasAnswered ? nextSentence : handleSubmitClick}
+          className={`w-full py-4 text-lg font-semibold rounded-8 ${
+            confirmSubmit ? "bg-yellow-500" : "bg-[#31CD9E]"
+          } text-white hover:bg-[#196951]`}
         >
-          {hasAnswered ? "Next" : "Submit"}
+          {hasAnswered ? "Next" : confirmSubmit ? "Confirm Submit" : "Submit"}
         </Button>
       </div>
 
@@ -333,12 +799,7 @@ export function PracticePage({ totalQuestions, onComplete }: PracticePageProps) 
           <h2 className="text-xl font-bold">
             {feedback?.correct ? "Awesome!" : "Not really..."}
           </h2>
-          <p className="mt-2">
-            Richtige Antwort(en):{" "}
-            {currentSentence.respostas_certas
-              .map((respostas) => `"${respostas.join(" ")}"`)
-              .join(", ")}
-          </p>
+          <p className="mt-2">{feedback?.message}</p>
           <Button
             onClick={nextSentence}
             className={`w-full mt-4 py-2 rounded-full ${
